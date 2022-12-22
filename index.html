@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Change Random</title>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text {
+            background-color: rgb(46, 43, 43);
+            padding: 1rem;
+            font-size: 2rem;
+            color: white;
+            margin: 1rem;
+            font-weight: 900;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        button {
+            padding: 1rem;
+            font-size: 1rem;
+
+            border: none;
+            border-radius: 0.4rem;
+            color: white;
+            font-weight: 600;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transition: all linear 0.9s;
+            transform: scale(1.1);
+        }
+
+        /* #color_name {
+        color: rgb(27, 233, 233);
+      } */
+    </style>
+</head>
+
+<body>
+    <span class="text">Backround color : <span id="color_name" class="va"></span></span>
+
+    <button class="btn" onclick="background()">Color Changer</button>
+    <script>
+        const background = () => {
+            let arry = ["Blue", "Green", "Red", "Yellow", "Brown", "Gray", "Purple", "Pink", "Orange", "Cyan", "Maroon", "Lime", "Violet", "Beige", "Indigo", "Gold", "Coral", "Turquoise", "Magenta", "Aquamarine", "Aqua", "ruby", "Ivory", "Khaki", "Fuchsia", "Plum", "salmon", "Goldenrod", "Peach", "Orchid", "Mauve",
+                "Amethyst"
+            ];
+            let random = Math.floor(Math.random() * arry.length);
+            let dom = arry[random];
+            let Background = document.querySelector("body");
+            Background.style.backgroundColor = dom;
+            let Name = document.querySelector(".va")
+            let button = document.querySelector(".btn")
+
+            button.style.backgroundColor = dom
+            Name.innerHTML = dom
+            Name.style.color = dom
+            console.log(dom);
+        };
+    </script>
+</body>
+</"html>
